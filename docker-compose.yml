@@ -1,11 +1,13 @@
 services:
   mysql:
-    image:
-    container_name:
-    ports:
+    build: ./ddns.src
+    container_name: ddns
     volumes:
+      - type: bind
+        source: ./data
+        target: /data
     environment:
-networks:
-  defaults:
-    external:
-      name: bridge
+      EMAIL: kigawa.8390@gmail.com
+      DOMAIN: /*.kigawa.net
+      ID: "9981bea93478308539631fafe5e495b9"
+      ZONE_ID: "ac52b110a9b655a56a9738d95bc28591"

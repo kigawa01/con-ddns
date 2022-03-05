@@ -1,7 +1,7 @@
 FROM openjdk
 RUN mkdir /src \
     && mkdir /data \
-    && curl https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/target/Geyser.jar > /src/Geyser.jar
+    && curl https://github.com/kigawa01/ddns-client/releases/download/4.0/ddns-client-4.0.jar > /src/ddns-client.jar
 WORKDIR /data
 EXPOSE 16132
-CMD ["java", "-jar","-Xmx512M","-Xms512M", "/src/Geyser.jar"]
+CMD ["java", "-jar","-Xmx64M","-Xms64M", "/src/ddns-client.jar"]
